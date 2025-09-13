@@ -14,9 +14,11 @@ spec:
       labels:
         app: discord-bot
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: discord-bot
-          image: registry.gitlab.com/lotoos1998/dcbot/discord-bot:latest
+          image: registry.gitlab.com/lotoos1998/dcbot/discord-bot:__TAG__
           env:
             - name: DISCORD_TOKEN
               valueFrom:
